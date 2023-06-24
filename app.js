@@ -13,54 +13,53 @@ function styleCreate(target, styleOb) {
 }
 
 styleCreate(document.body, {
-  margin: 0,
+  margin: 0
 })
 
-let root = tagCreate('div', {id: 'root'})
+const root = tagCreate('div', {id: 'root'})
 document.body.appendChild(root);
-styleCreate(root, {
-  backgroundColor: '#F5F3C1',
-  width: '100vw',
-  height: '100vh'
-})
+styleCreate(root, style.rootContainer);
 
-let header = tagCreate('div', {id: 'header'});
-root.appendChild(header);
-styleCreate(header, {
-  width: '50%',
-  height: '30%',
-  backgroundColor: '#27E1C1',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center'
-})
+//! 메뉴 파트
 
-header.innerText = "여긴 헤더입니다."
+const menu = tagCreate('div', {id: 'menu'})
+root.appendChild(menu);
+styleCreate(menu, style.menuContainer);
 
-let main = tagCreate('div', {id: 'main'});
+const profile = tagCreate('div', {id: 'profile'})
+menu.appendChild(profile);
+styleCreate(profile, style.profileBox);
+
+profile.innerText = "프로필"
+
+const indexBox = tagCreate('div', {id: 'index'})
+menu.appendChild(indexBox);
+styleCreate(indexBox, style.indexBox);
+
+let indexArray = [];
+
+for(let i = 0; i < 6; i++) {
+  let index = tagCreate('div');
+  indexArray.push(index);
+  indexBox.appendChild(indexArray[i]);
+  styleCreate(indexArray[i], style.indexComponent);
+}
+
+//! 내용 파트
+const main = tagCreate('div', {id: 'main'});
 root.appendChild(main);
 
-styleCreate(main, {
-  width: '50%',
-  height: '30%',
-  backgroundColor: '#0EA293',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center'
-})
+styleCreate(main, style.mainContainer);
 
-main.innerText = "여긴 메인입니다."
 
-let footer = tagCreate('div', {id: 'footer'});
-root.appendChild(footer);
+const writeBox = tagCreate('div');
+main.appendChild(writeBox);
+styleCreate(writeBox, style.writeBox);
 
-styleCreate(footer, {
-  width: '50%',
-  height: '30%',
-  backgroundColor: '#2F0F5D',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center'
-})
+const titleBox = tagCreate('div');
+writeBox.appendChild(titleBox);
+styleCreate(titleBox, style.titleBox);
 
-footer.innerText = "여긴 푸터입니다."
+const detailBox = tagCreate('div');
+writeBox.appendChild(detailBox);
+styleCreate(detailBox, style.detailBox);
