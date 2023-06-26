@@ -38,7 +38,7 @@ const style = {
     width: '80%',
     height: '100%',
     border: '1px solid red',
-    ...styleComponent.flexRowCenterSet,
+    ...styleComponent.flexColCenterSet,
   },
   profileBox: {
     width: '90%',
@@ -60,7 +60,6 @@ const style = {
   writeBox: {
     width: '90%',
     height: '200px',
-    border: '1px solid blue',
   },
   titleBox: {
     width: styleComponent.width.width100p,
@@ -71,5 +70,18 @@ const style = {
     width: styleComponent.width.width100p,
     height: '70%',
     border: '1px solid red',
-  }
+  },
+  boxContainer: {
+    width: '90%',
+    height: '30%',
+    border: '1px solid red',
+    marginTop: '30px',
+    ...styleComponent.flexRowCenterSet,
+    justifyContent: 'space-evenly',
+  },
+  boxComponent: {
+    width: '23%',
+    height: '80%',
+    border: '1px solid red',
+  },
 }
