@@ -13,7 +13,10 @@ function styleCreate(target, styleOb) {
 }
 
 styleCreate(document.body, {
+  boxSizing: 'border-box',
+  padding: 0,
   margin: 0,
+  fontFamily: 'Noto Sans KR',
 });
 
 const root = tagCreate("div", { id: "root" });
@@ -86,7 +89,6 @@ function makeBox() {
 
 makeWriteBox("성장과정", "나는 자랑스럽게 자라와....");
 
-makeBox();
 makeBox();
 makeBox();
 makeBox();

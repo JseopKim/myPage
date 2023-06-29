@@ -24,13 +24,19 @@ const styleComponent = {
 const style = {
   rootContainer: {
     width: '100vw',
-    height: '100vh',
+    height: '2000px',
     backgroundColor: 'white',
-    ...styleComponent.flexRowCenterSet,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'end',
+    alignItems: 'end',
   },
-  menuContainer: { 
+  menuContainer: {
+    position: 'fixed', /* 고정 위치 설정 */
+    top: 0, /* 상단에 고정 */
+    left: 0, /* 좌측에 고정 */
+    height: '100vh', /* 화면 전체 높이로 설정 */
     width: '20%',
-    height: '100%',
     border: '1px solid red',
     ...styleComponent.flexColCenterSet,
   },
@@ -38,11 +44,14 @@ const style = {
     width: '80%',
     height: '100%',
     border: '1px solid red',
-    ...styleComponent.flexColCenterSet,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-around',
   },
   profileBox: {
     width: '90%',
-    height: '30%',
+    height: '400px',
     border: '1px solid red',
     ...styleComponent.flexColCenterSet,
   },
@@ -73,15 +82,15 @@ const style = {
   },
   boxContainer: {
     width: '90%',
-    height: '30%',
+    height: '15%',
     border: '1px solid red',
     marginTop: '30px',
     ...styleComponent.flexRowCenterSet,
     justifyContent: 'space-evenly',
   },
   boxComponent: {
-    width: '23%',
-    height: '80%',
+    width: '15%',
+    height: '70%',
     border: '1px solid red',
   },
 }
