@@ -6,8 +6,17 @@ const server = http.createServer(function(request, response) {
   if (request.method === "GET" && request.url === "/") {
     response.statusCode = 200;
     response.setHeader("Content-Type", "text/html");
+    response.write(htmlBox.htmlContainer(htmlBox.styleData));
     response.write(htmlBox.htmlContainer(htmlBox.mainData));
     response.end();
+  }
+  else if (request.url === "/style.js") {
+    fs.readFile("./style.js", function (err, data) {
+      response.statusCode = 200;
+      response.setHeader("Content-Type", "text/html");
+      response.write(data);
+      response.end();
+    });
   }
   else if (request.url === "/main.js") {
     fs.readFile("./main.js", function (err, data) {

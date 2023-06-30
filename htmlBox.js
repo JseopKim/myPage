@@ -13,7 +13,6 @@ const html = {
       box-sizing: border-box;
       padding: 0%;
       margin: 0%;
-      font-family: 'Black And White Picture', sans-serif;
     }
   </style>
 </head>
@@ -23,8 +22,8 @@ const html = {
 </html>
     `;
   },
-  styleData: `<script src="style.js"></script>`,
-  mainData: `<script src="app.js"></script>`
+  mainData: `<script src="/main.js"></script>`,
+  styleData: `<script src="/style.js"></script>`,
 };
 
 export default html;
