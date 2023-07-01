@@ -12,58 +12,41 @@ function styleCreate(target, styleOb) {
   }
 }
 
+styleCreate(document.body, {
+  boxSizing: 'border-box',
+  padding: 0,
+  margin: 0,
+  fontFamily: 'Noto Sans KR',
+});
+
 const root = tagCreate("div", { id: "root" });
 document.body.appendChild(root);
 styleCreate(root, style.rootContainer);
 
 //! 메뉴 파트
 
-const menuContainer = tagCreate("div", { id: "menu" });
-root.appendChild(menuContainer);
-styleCreate(menuContainer, style.menuContainer);
+const menu = tagCreate("div", { id: "menu" });
+root.appendChild(menu);
+styleCreate(menu, style.menuContainer);
 
-const menuTitle = tagCreate("div");
-menuContainer.appendChild(menuTitle);
-styleCreate(menuTitle, style.menuTitle);
+const profile = tagCreate("div", { id: "profile" });
+menu.appendChild(profile);
+styleCreate(profile, style.profileBox);
 
-const menuTitleText = tagCreate("div");
-menuTitle.appendChild(menuTitleText);
-styleCreate(menuTitleText, style.menuTitleText);
-menuTitleText.innerText = "Sensuous Developer";
+profile.innerText = "프로필";
 
-const menuBox = tagCreate("div");
-menuContainer.appendChild(menuBox);
-styleCreate(menuBox, style.menuBox);
+const indexBox = tagCreate("div", { id: "index" });
+menu.appendChild(indexBox);
+styleCreate(indexBox, style.indexBox);
 
-let boxArray = [];
-let menuName = ['Profile', 'Growth Process', 'About Jiseop Kim'];
+let indexArray = [];
 
-for (let i = 0; i < 3; i++) {
-  let menu = tagCreate("div");
-  boxArray.push(menu);
-  menuBox.appendChild(boxArray[i]);
-  styleCreate(boxArray[i], style.menu);
-  boxArray[i].innerText = menuName[i];
+for (let i = 0; i < 6; i++) {
+  let index = tagCreate("div");
+  indexArray.push(index);
+  indexBox.appendChild(indexArray[i]);
+  styleCreate(indexArray[i], style.indexComponent);
 }
-
-// const profile = tagCreate("div", { id: "profile" });
-// menu.appendChild(profile);
-// styleCreate(profile, style.profileBox);
-
-// profile.innerText = "프로필";
-
-// const indexBox = tagCreate("div", { id: "index" });
-// menu.appendChild(indexBox);
-// styleCreate(indexBox, style.indexBox);
-
-// let indexArray = [];
-
-// for (let i = 0; i < 6; i++) {
-//   let index = tagCreate("div");
-//   indexArray.push(index);
-//   indexBox.appendChild(indexArray[i]);
-//   styleCreate(indexArray[i], style.indexComponent);
-// }
 
 //! 내용 파트
 const main = tagCreate("div", { id: "main" });
