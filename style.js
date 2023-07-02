@@ -75,24 +75,18 @@ const style = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'space-around',
   },
   profileBox: {
-    width: '90%',
-    height: '400px',
+    width: '100%',
+    height: '100%',
     border: '1px solid red',
     ...styleComponent.flexColCenterSet,
+    justifyContent: 'start',
   },
-  indexBox: {
-    width: '90%',
-    height: '40%',
-  },
-  indexComponent: {
-    width: styleComponent.width.width100p,
-    height: '15%',
+  profileImg: {
+    width: '300px',
+    height: '300px',
     border: '1px solid red',
-    marginTop: '10px',
-    marginBottom: '10px',
   },
   writeBox: {
     width: '90%',
@@ -120,5 +114,12 @@ const style = {
     width: '15%',
     height: '70%',
     border: '1px solid red',
+  },
+}
+
+const eventStyle = {
+  menuEvent: {
+    borderBottom: '8px solid black',
+    cursor: 'pointer',
   },
 }

@@ -35,6 +35,7 @@ const menuBox = tagCreate("div");
 menuContainer.appendChild(menuBox);
 styleCreate(menuBox, style.menuBox);
 
+//? 제목 및 메뉴 스타일 파트
 let boxArray = [];
 let menuName = ['Profile', 'Growth Process', 'About Jiseop Kim'];
 
@@ -44,11 +45,14 @@ for (let i = 0; i < 3; i++) {
   menuBox.appendChild(boxArray[i]);
   styleCreate(boxArray[i], style.menu);
   boxArray[i].innerText = menuName[i];
-}
 
-// const profile = tagCreate("div", { id: "profile" });
-// menu.appendChild(profile);
-// styleCreate(profile, style.profileBox);
+  boxArray[i].addEventListener('mouseover',function() {
+    styleCreate(boxArray[i], eventStyle.menuEvent)
+  });
+  boxArray[i].addEventListener('mouseout',function() {
+    boxArray[i].style.borderBottom = '';
+  });
+}
 
 // profile.innerText = "프로필";
 
@@ -70,6 +74,14 @@ const main = tagCreate("div", { id: "main" });
 root.appendChild(main);
 
 styleCreate(main, style.mainContainer);
+
+const profileContainer = tagCreate("div", { id: "profile" });
+main.appendChild(profileContainer);
+styleCreate(profileContainer, style.profileBox);
+
+const profileImg = tagCreate("div");
+profileContainer.appendChild(profileImg);
+styleCreate(profileImg, style.profileImg)
 
 function makeWriteBox(title, detail) {
   const writeBox = tagCreate("div");
@@ -104,8 +116,8 @@ function makeBox() {
   }
 }
 
-makeWriteBox("성장과정", "나는 자랑스럽게 자라와....");
+// makeWriteBox("성장과정", "나는 자랑스럽게 자라와....");
 
-makeBox();
-makeBox();
-makeBox();
+// makeBox();
+// makeBox();
+// makeBox();
