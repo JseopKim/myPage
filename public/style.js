@@ -33,34 +33,60 @@ const style = {
   },
   menuContainer: {
     width: '100%',
+    height: '20%',
+    border: '1px solid blue',
+    ...styleComponent.flexColCenterSet,
+  },
+  menuTitle: {
+    width: '95%',
+    height: '20%',
     border: '1px solid red',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  menuTitleText: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'end',
+    alignItems: 'center',
+    border: '1px solid blue',
+    fontSize: '70px',
+  },
+  menuBox: {
+    width: '95%',
+    height: '50%',
     ...styleComponent.flexRowCenterSet,
+    justifyContent: 'end',
+    alignItems: 'end',
+    border: '1px solid red',
+    gap: '50px',
+  },
+  menu: {
+    ...styleComponent.flexRowCenterSet,
+    justifyContent: 'space-evenly',
+    border: '1px solid red',
+    fontSize: '50px',
   },
   mainContainer: {
-    width: '80%',
+    width: '100%',
     height: '100%',
     border: '1px solid red',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'space-around',
   },
   profileBox: {
-    width: '90%',
-    height: '400px',
+    width: '100%',
+    height: '100%',
     border: '1px solid red',
     ...styleComponent.flexColCenterSet,
+    justifyContent: 'start',
   },
-  indexBox: {
-    width: '90%',
-    height: '40%',
-  },
-  indexComponent: {
-    width: styleComponent.width.width100p,
-    height: '15%',
+  profileImg: {
+    width: '300px',
+    height: '300px',
     border: '1px solid red',
-    marginTop: '10px',
-    marginBottom: '10px',
   },
   writeBox: {
     width: '90%',
@@ -88,5 +114,12 @@ const style = {
     width: '15%',
     height: '70%',
     border: '1px solid red',
+  },
+}
+
+const eventStyle = {
+  menuEvent: {
+    borderBottom: '8px solid black',
+    cursor: 'pointer',
   },
 }
