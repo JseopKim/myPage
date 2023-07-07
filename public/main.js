@@ -59,8 +59,18 @@ const main = tagCreate("div", { id: "main" });
 root.appendChild(main);
 styleCreate(main, style.mainContainer);
 
+window.addEventListener('load', function() {
+  growthContainer.style.display = "none";
+})
+
 document.getElementById(menuName[0]).addEventListener('click', function() {
+  profileContainer.style.display = "flex";
+  growthContainer.style.display = "none";
+})
+
+document.getElementById(menuName[1]).addEventListener('click', function() {
   profileContainer.style.display = "none";
+  growthContainer.style.display = "flex";
 })
 
 //? 프로필
@@ -90,11 +100,25 @@ for(let i = 0; i < 4; i++) {
 }
 
 //? 성장과정
+const growthContainer = tagCreate("div");
+main.appendChild(growthContainer);
+styleCreate(growthContainer, style.growthContainer);
 
+makeWriteBox("학교에서 진행한 첫번째 프로젝트", "이러쿵 저러쿵");
+makeWriteBox("학교에서 진행한 첫번째 프로젝트", "이러쿵 저러쿵");
+makeWriteBox("학교에서 진행한 첫번째 프로젝트", "이러쿵 저러쿵");
 
 function makeWriteBox(title, detail) {
+  const contentBox = tagCreate("div");
+  growthContainer.appendChild(contentBox);
+  styleCreate(contentBox, style.contentBox);
+  
+  const growthImg = tagCreate("div");
+  contentBox.appendChild(growthImg);
+  styleCreate(growthImg, style.growthImg);
+
   const writeBox = tagCreate("div");
-  main.appendChild(writeBox);
+  contentBox.appendChild(writeBox);
   styleCreate(writeBox, style.writeBox);
 
   const titleBox = tagCreate("div");
@@ -112,7 +136,7 @@ function makeWriteBox(title, detail) {
 
 function makeBox() {
   const boxContainer = tagCreate("div");
-  main.appendChild(boxContainer);
+  growthContainer.appendChild(boxContainer);
   styleCreate(boxContainer, style.boxContainer);
   
   let box = [];
