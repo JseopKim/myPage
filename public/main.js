@@ -40,7 +40,7 @@ let boxArray = [];
 let menuName = ['Profile', 'Growth Process', 'About Jiseop Kim'];
 
 for (let i = 0; i < 3; i++) {
-  let menu = tagCreate("div");
+  let menu = tagCreate("div", {id: menuName[i]});
   boxArray.push(menu);
   menuBox.appendChild(boxArray[i]);
   styleCreate(boxArray[i], style.menu);
@@ -54,34 +54,43 @@ for (let i = 0; i < 3; i++) {
   });
 }
 
-// profile.innerText = "프로필";
-
-// const indexBox = tagCreate("div", { id: "index" });
-// menu.appendChild(indexBox);
-// styleCreate(indexBox, style.indexBox);
-
-// let indexArray = [];
-
-// for (let i = 0; i < 6; i++) {
-//   let index = tagCreate("div");
-//   indexArray.push(index);
-//   indexBox.appendChild(indexArray[i]);
-//   styleCreate(indexArray[i], style.indexComponent);
-// }
-
 //! 내용 파트
 const main = tagCreate("div", { id: "main" });
 root.appendChild(main);
-
 styleCreate(main, style.mainContainer);
 
+document.getElementById(menuName[0]).addEventListener('click', function() {
+  profileContainer.style.display = "none";
+})
+
+//? 프로필
 const profileContainer = tagCreate("div", { id: "profile" });
 main.appendChild(profileContainer);
 styleCreate(profileContainer, style.profileBox);
 
+const profileImgBox = tagCreate("div");
+profileContainer.appendChild(profileImgBox);
+styleCreate(profileImgBox, style.profileImgBox);
+
 const profileImg = tagCreate("div");
-profileContainer.appendChild(profileImg);
-styleCreate(profileImg, style.profileImg)
+profileImgBox.appendChild(profileImg);
+styleCreate(profileImg, style.profileImg);
+
+const profileContentBox = tagCreate("div");
+profileContainer.appendChild(profileContentBox);
+styleCreate(profileContentBox, style.profileContentBox);
+
+let textBoxArr = [];
+
+for(let i = 0; i < 4; i++) {
+  const text = tagCreate("div");
+  textBoxArr.push(text);
+  profileContentBox.appendChild(textBoxArr[i]);
+  styleCreate(textBoxArr[i], style.profileContent);
+}
+
+//? 성장과정
+
 
 function makeWriteBox(title, detail) {
   const writeBox = tagCreate("div");
@@ -115,9 +124,3 @@ function makeBox() {
     styleCreate(box[i], style.boxComponent);
   }
 }
-
-// makeWriteBox("성장과정", "나는 자랑스럽게 자라와....");
-
-// makeBox();
-// makeBox();
-// makeBox();

@@ -24,7 +24,7 @@ const styleComponent = {
 const style = {
   rootContainer: {
     width: '100vw',
-    height: '2000px',
+    height: '130vh',
     backgroundColor: 'white',
     display: 'flex',
     flexDirection: 'column',
@@ -33,16 +33,17 @@ const style = {
   },
   menuContainer: {
     width: '100%',
-    height: '20%',
+    height: '30%',
     border: '1px solid blue',
     ...styleComponent.flexColCenterSet,
+    justifyContent: 'space-between',
   },
   menuTitle: {
     width: '95%',
-    height: '20%',
+    height: '30%',
     border: '1px solid red',
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'end',
     alignItems: 'center',
   },
   menuTitleText: {
@@ -55,11 +56,11 @@ const style = {
   },
   menuBox: {
     width: '95%',
-    height: '50%',
+    height: '40%',
     ...styleComponent.flexRowCenterSet,
     justifyContent: 'end',
-    alignItems: 'end',
-    border: '1px solid red',
+    alignItems: 'start',
+    border: '1px solid purple',
     gap: '50px',
   },
   menu: {
@@ -80,17 +81,37 @@ const style = {
     width: '100%',
     height: '100%',
     border: '1px solid red',
-    ...styleComponent.flexColCenterSet,
+    ...styleComponent.flexRowCenterSet,
     justifyContent: 'start',
+  },
+  profileImgBox: {
+    width: '40%',
+    height: '100%',
+    border: '1px solid red',
+    ...styleComponent.flexColCenterSet,
   },
   profileImg: {
     width: '300px',
     height: '300px',
     border: '1px solid red',
   },
+  profileContentBox: {
+    width: '60%',
+    height: '100%',
+    border: '1px solid red',
+    backgroundColor: 'black',
+    ...styleComponent.flexColCenterSet,
+    gap: '40px',
+  },
+  profileContent: {
+    width: '40%',
+    height: '7%',
+    border: '1px solid white',
+  },
   writeBox: {
-    width: '90%',
-    height: '200px',
+    width: '50%',
+    height: '100%',
+    border: '1px solid blue',
   },
   titleBox: {
     width: styleComponent.width.width100p,
