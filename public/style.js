@@ -25,7 +25,7 @@ const style = {
   rootContainer: {
     width: '100vw',
     height: '130vh',
-    backgroundColor: 'white',
+    backgroundColor: 'black',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'end',
@@ -34,14 +34,12 @@ const style = {
   menuContainer: {
     width: '100%',
     height: '30%',
-    border: '1px solid blue',
     ...styleComponent.flexColCenterSet,
     justifyContent: 'space-between',
   },
   menuTitle: {
     width: '95%',
     height: '30%',
-    border: '1px solid red',
     flexDirection: 'row',
     justifyContent: 'end',
     alignItems: 'center',
@@ -51,22 +49,18 @@ const style = {
     flexDirection: 'row',
     justifyContent: 'end',
     alignItems: 'center',
-    border: '1px solid blue',
-    fontSize: '70px',
+    fontSize: '70px'
   },
   menuBox: {
     width: '95%',
     height: '40%',
     ...styleComponent.flexRowCenterSet,
     justifyContent: 'end',
-    alignItems: 'start',
-    border: '1px solid purple',
     gap: '50px',
   },
   menu: {
     ...styleComponent.flexRowCenterSet,
     justifyContent: 'space-evenly',
-    border: '1px solid red',
     fontSize: '50px',
   },
   mainContainer: {
@@ -85,18 +79,27 @@ const style = {
     justifyContent: 'start',
   },
   profileImgBox: {
-    width: '40%',
+    width: '60%',
     height: '100%',
-    border: '1px solid red',
-    ...styleComponent.flexColCenterSet,
+    border: '1px solid blue',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'start',
+    justifyContent: 'space-evenly',
+    marginLeft: '30px',
   },
   profileImg: {
     width: '300px',
     height: '300px',
     border: '1px solid red',
   },
+  profileInfo: {
+    width: '90%',
+    height: '40%',
+    border: '1px solid red',
+  },
   profileContentBox: {
-    width: '60%',
+    width: '40%',
     height: '100%',
     border: '1px solid red',
     backgroundColor: 'black',
@@ -104,7 +107,7 @@ const style = {
     gap: '40px',
   },
   profileContent: {
-    width: '40%',
+    width: '60%',
     height: '7%',
     border: '1px solid white',
   },
@@ -143,23 +146,27 @@ const style = {
     border: '1px solid red',
   },
   boxContainer: {
-    width: '90%',
-    height: '15%',
+    width: '100%',
+    height: '60%',
     border: '1px solid red',
     marginTop: '30px',
     ...styleComponent.flexRowCenterSet,
     justifyContent: 'space-evenly',
+    position: "relative",
+    overflow: "hidden",
   },
   boxComponent: {
-    width: '15%',
-    height: '70%',
+    width: '300px',
     border: '1px solid red',
+    aspectRatio: '1/1',
+    ...styleComponent.flexRowCenterSet,
+    fontSize: '40px',
   },
 }
 
 const eventStyle = {
   menuEvent: {
-    borderBottom: '8px solid black',
+    borderBottom: '8px solid #ffffff',
     cursor: 'pointer',
   },
 }

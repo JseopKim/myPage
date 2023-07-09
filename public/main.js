@@ -86,6 +86,10 @@ const profileImg = tagCreate("div");
 profileImgBox.appendChild(profileImg);
 styleCreate(profileImg, style.profileImg);
 
+const profileInfo = tagCreate("div");
+profileImgBox.appendChild(profileInfo);
+styleCreate(profileInfo, style.profileInfo);
+
 const profileContentBox = tagCreate("div");
 profileContainer.appendChild(profileContentBox);
 styleCreate(profileContentBox, style.profileContentBox);
@@ -103,10 +107,6 @@ for(let i = 0; i < 4; i++) {
 const growthContainer = tagCreate("div");
 main.appendChild(growthContainer);
 styleCreate(growthContainer, style.growthContainer);
-
-makeWriteBox("학교에서 진행한 첫번째 프로젝트", "이러쿵 저러쿵");
-makeWriteBox("학교에서 진행한 첫번째 프로젝트", "이러쿵 저러쿵");
-makeWriteBox("학교에서 진행한 첫번째 프로젝트", "이러쿵 저러쿵");
 
 function makeWriteBox(title, detail) {
   const contentBox = tagCreate("div");
@@ -134,6 +134,8 @@ function makeWriteBox(title, detail) {
   detailBox.innerHTML = detail;
 }
 
+const years = [2020, 2021, 2022, 2023]
+
 function makeBox() {
   const boxContainer = tagCreate("div");
   growthContainer.appendChild(boxContainer);
@@ -141,10 +143,27 @@ function makeBox() {
   
   let box = [];
   
-  for (let i = 0; i < 4; i++) {
+  for (let i in years) {
     let boxComponent = tagCreate("div");
     box.push(boxComponent);
     boxContainer.appendChild(box[i]);
     styleCreate(box[i], style.boxComponent);
+    box[i].innerText = years[i];
   }
+
+  boxContainer.addEventListener("mouseover", function (event) {
+    const target = event.target;
+    const boxIndex = box.indexOf(target);
+
+    if (boxIndex >= 0) {
+      const fillPercentage = (boxIndex + 1) * 25;
+      boxContainer.style.borderTop = `solid red ${fillPercentage}%`;
+    }
+  });
+
+  boxContainer.addEventListener("mouseout", function () {
+    boxContainer.style.borderTop = "none";
+  });
 }
+
+makeBox();
