@@ -95,16 +95,25 @@ styleCreate(main, style.mainContainer);
 
 window.addEventListener('load', function() {
   growthContainer.style.display = "none";
+  aboutContainer.style.display = "none";
 })
 
 document.getElementById(menuName[0]).addEventListener('click', function() {
   profileContainer.style.display = "flex";
   growthContainer.style.display = "none";
+  aboutContainer.style.display = "none";
 })
 
 document.getElementById(menuName[1]).addEventListener('click', function() {
   profileContainer.style.display = "none";
   growthContainer.style.display = "flex";
+  aboutContainer.style.display = "none";
+})
+
+document.getElementById(menuName[2]).addEventListener('click', function() {
+  profileContainer.style.display = "none";
+  growthContainer.style.display = "none";
+  aboutContainer.style.display = "flex";
 })
 
 //? 프로필
@@ -199,6 +208,7 @@ const project = {
   }
 }
 
+//* 모달 안에 컨텐츠 함수
 function makeContent(parent, title, content, link) {
   const contentBox = tagCreate("div");
   parent.appendChild(contentBox);
@@ -239,7 +249,7 @@ function makeContent(parent, title, content, link) {
   detailBox.innerText = link;
 }
 
-//? 모달 생성 함수
+//* 모달 생성 함수
 function makeModal() {
   const modal = tagCreate("div", {id: "modal"});
   styleCreate(modal, style.modal);
@@ -258,14 +268,14 @@ function makeModal() {
   return modal;
 }
 
-//? 모달 열기 함수
+//* 모달 열기 함수
 
 function openModal() {
   const modal = makeModal();
   document.body.appendChild(modal);
 }
 
-//? boxComponent 클릭 이벤트 처리
+//* boxComponent 클릭 이벤트 처리
 for (let i = 0; i < box.length; i++) {
   box[i].addEventListener('click', function() {
     openModal();
@@ -288,3 +298,15 @@ for (let i = 0; i < box.length; i++) {
     }
   });
 }
+
+//? About Jiseop Kim
+const aboutContainer = tagCreate("div", {id: "about"});
+main.appendChild(aboutContainer);
+styleCreate(aboutContainer, style.aboutContainer);
+
+const subMenuBox = tagCreate("div");
+aboutContainer.appendChild(subMenuBox);
+styleCreate(subMenuBox, style.subMenuBox);
+
+const subMenu = tagCreate
+

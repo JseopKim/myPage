@@ -187,6 +187,14 @@ const style = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-evenly',
+  },
+  aboutContainer: {
+    width: styleComponent.width.width100p,
+    height: styleComponent.height.height100p,
+    border: '1px solid red',
+  },
+  subMenuBox: {
+    
   }
 }
 
