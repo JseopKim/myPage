@@ -29,7 +29,29 @@ styleCreate(menuTitle, style.menuTitle);
 const menuTitleText = tagCreate("div");
 menuTitle.appendChild(menuTitleText);
 styleCreate(menuTitleText, style.menuTitleText);
-menuTitleText.innerText = "Sensuous Developer";
+// menuTitleText.innerText = `Sensuous Developer`;
+
+// "Sensuous Developer" 텍스트를 구성하는 부분을 서로 다른 스타일로 감싸기
+const titleTextFirstfix = tagCreate("span");
+titleTextFirstfix.innerText = "Se";
+titleTextFirstfix.style.color = "#79EF39"; // 첫 번째 부분의 색상 지정
+
+const titleTextSecondfix = tagCreate("span");
+titleTextSecondfix.innerText = "nsuous Devel";
+titleTextSecondfix.style.color = "#ffffff"; // 두 번째 부분의 색상 지정
+
+const titleTextThirdfix = tagCreate("span");
+titleTextThirdfix.innerText = "op";
+titleTextThirdfix.style.color = "#79EF39"; // 세 번째 부분의 색상 지정
+
+const titleTextLastfix = tagCreate("span");
+titleTextLastfix.innerText = "er";
+titleTextLastfix.style.color = "#ffffff"; // 네 번째 부분의 색상 지정
+
+menuTitleText.appendChild(titleTextFirstfix);
+menuTitleText.appendChild(titleTextSecondfix);
+menuTitleText.appendChild(titleTextThirdfix);
+menuTitleText.appendChild(titleTextLastfix);
 
 const menuBox = tagCreate("div");
 menuContainer.appendChild(menuBox);
@@ -40,19 +62,31 @@ let boxArray = [];
 let menuName = ['Profile', 'Growth Process', 'About Jiseop Kim'];
 
 for (let i = 0; i < 3; i++) {
-  let menu = tagCreate("div", {id: menuName[i]});
+  let menu = tagCreate("div", { id: menuName[i] });
   boxArray.push(menu);
   menuBox.appendChild(boxArray[i]);
   styleCreate(boxArray[i], style.menu);
-  boxArray[i].innerText = menuName[i];
+  
+  // 'About Jiseop Kim' 텍스트에서 'seop' 부분을 다른 색상으로 표시
+  if (menuName[i] === 'About Jiseop Kim') {
+    const spanElement = document.createElement('span');
+    spanElement.innerText = 'seop ';
+    spanElement.style.color = '#79EF39'; // 다른 색상으로 지정
+    boxArray[i].appendChild(document.createTextNode('About Ji'));
+    boxArray[i].appendChild(spanElement);
+    boxArray[i].appendChild(document.createTextNode(' Kim'));
+  } else {
+    boxArray[i].innerText = menuName[i];
+  }
 
-  boxArray[i].addEventListener('mouseover',function() {
-    styleCreate(boxArray[i], eventStyle.menuEvent)
+  boxArray[i].addEventListener('mouseover', function() {
+    styleCreate(boxArray[i], eventStyle.menuEvent);
   });
-  boxArray[i].addEventListener('mouseout',function() {
+  boxArray[i].addEventListener('mouseout', function() {
     boxArray[i].style.borderBottom = '';
   });
 }
+
 
 //! 내용 파트
 const main = tagCreate("div", { id: "main" });
@@ -110,12 +144,8 @@ styleCreate(growthContainer, style.growthContainer);
 
 function makeWriteBox(title, detail) {
   const contentBox = tagCreate("div");
-  growthContainer.appendChild(contentBox);
+  modal.appendChild(contentBox);
   styleCreate(contentBox, style.contentBox);
-  
-  const growthImg = tagCreate("div");
-  contentBox.appendChild(growthImg);
-  styleCreate(growthImg, style.growthImg);
 
   const writeBox = tagCreate("div");
   contentBox.appendChild(writeBox);
@@ -125,45 +155,136 @@ function makeWriteBox(title, detail) {
   writeBox.appendChild(titleBox);
   styleCreate(titleBox, style.titleBox);
 
-  titleBox.innerHTML = title;
+  titleBox.innerText = title;
 
   const detailBox = tagCreate("div");
   writeBox.appendChild(detailBox);
   styleCreate(detailBox, style.detailBox);
 
-  detailBox.innerHTML = detail;
+  detailBox.innerText = detail;
 }
 
-const years = [2020, 2021, 2022, 2023]
+const years = [2020, 2021, 2022, 2023];
 
-function makeBox() {
-  const boxContainer = tagCreate("div");
-  growthContainer.appendChild(boxContainer);
-  styleCreate(boxContainer, style.boxContainer);
-  
-  let box = [];
-  
-  for (let i in years) {
-    let boxComponent = tagCreate("div");
-    box.push(boxComponent);
-    boxContainer.appendChild(box[i]);
-    styleCreate(box[i], style.boxComponent);
-    box[i].innerText = years[i];
+let box = [];
+
+const boxContainer = tagCreate("div");
+growthContainer.appendChild(boxContainer);
+styleCreate(boxContainer, style.boxContainer);
+
+for (let i in years) {
+  const boxComponent = tagCreate("div");
+  box.push(boxComponent);
+  boxContainer.appendChild(box[i]);
+  styleCreate(box[i], style.boxComponent);
+  box[i].innerText = years[i];
+}
+
+const project = {
+  project_2020: {
+    title: ['ShoeNikers', 'keen'],
+    link: ['aaabbbccc', 'aaabbb'],
+  },
+  project_2021: {
+    title: ['seeseeTV'],
+    link: ['aaaaaaa'],
+  },
+  project_2022: {
+    title: ['CCTV Manager', 'KIDSAFE'],
+    link: ['aaa', 'bbb'],
+  },
+  project_2023: {
+    title: ['Mungta', 'ChickenStock', 'smooD'],
+    link: ['ddd', 'eee', 'fff'],
   }
+}
 
-  boxContainer.addEventListener("mouseover", function (event) {
-    const target = event.target;
-    const boxIndex = box.indexOf(target);
+function makeContent(parent, title, content, link) {
+  const contentBox = tagCreate("div");
+  parent.appendChild(contentBox);
+  const titleLength = project.project_2020.title.length;
+  const heightPercentage = 100 / titleLength;
+  const contentBoxHeight = heightPercentage + "%";
+  
+  styleCreate(contentBox, {
+    ...style.contentBox,
+    height: contentBoxHeight,
+  });
+  // styleCreate(contentBox, style.contentBox);
 
-    if (boxIndex >= 0) {
-      const fillPercentage = (boxIndex + 1) * 25;
-      boxContainer.style.borderTop = `solid red ${fillPercentage}%`;
+  const setBox = tagCreate("div");
+  contentBox.appendChild(setBox);
+  styleCreate(setBox, style.setBox);
+  
+  const writeBox = tagCreate("div");
+  contentBox.appendChild(writeBox);
+  styleCreate(writeBox, style.writeBox);
+
+  const titleBox = tagCreate("div");
+  writeBox.appendChild(titleBox);
+  styleCreate(titleBox, style.titleBox);
+
+  titleBox.innerText = title;
+
+  const detailBox = tagCreate("div");
+  writeBox.appendChild(detailBox);
+  styleCreate(detailBox, style.detailBox);
+
+  detailBox.innerText = content;
+
+  const linkBox = tagCreate("div");
+  writeBox.appendChild(linkBox);
+  styleCreate(linkBox, style.linkBox);
+
+  detailBox.innerText = link;
+}
+
+//? 모달 생성 함수
+function makeModal() {
+  const modal = tagCreate("div", {id: "modal"});
+  styleCreate(modal, style.modal);
+
+  const modalContent = tagCreate("div", { id: "modalContent" });
+  styleCreate(modalContent, style.modalContent);
+  modal.appendChild(modalContent);
+
+  //* 모달 닫기 이벤트 처리
+  modal.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      modal.parentNode.removeChild(modal);
     }
   });
 
-  boxContainer.addEventListener("mouseout", function () {
-    boxContainer.style.borderTop = "none";
-  });
+  return modal;
 }
 
-makeBox();
+//? 모달 열기 함수
+
+function openModal() {
+  const modal = makeModal();
+  document.body.appendChild(modal);
+}
+
+//? boxComponent 클릭 이벤트 처리
+for (let i = 0; i < box.length; i++) {
+  box[i].addEventListener('click', function() {
+    openModal();
+    if (i === 0) {
+      for (let j = 0; j < project.project_2020.title.length; j++) {
+        makeContent(modalContent, project.project_2020.title[j], project.project_2020.link[j]);
+      }
+    } else if (i === 1) {
+      for (let j = 0; j < project.project_2021.title.length; j++) {
+        makeContent(modalContent, project.project_2021.title[j], project.project_2021.link[j]);
+      }
+    } else if (i === 2) {
+      for (let j = 0; j < project.project_2022.title.length; j++) {
+        makeContent(modalContent, project.project_2022.title[j], project.project_2022.link[j]);
+      }
+    } else if (i === 3) {
+      for (let j = 0; j < project.project_2023.title.length; j++) {
+        makeContent(modalContent, project.project_2023.title[j], project.project_2023.link[j]);
+      }
+    }
+  });
+}

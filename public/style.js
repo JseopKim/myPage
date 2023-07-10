@@ -118,22 +118,23 @@ const style = {
     justifyContent: 'space-evenly',
   },
   contentBox: {
-    width: styleComponent.width.width100p,
-    height: styleComponent.height.height100p,
+    width: '100%',
+    height: '100%',
     ...styleComponent.flexRowCenterSet,
     justifyContent: 'space-evenly',
   },
-  growthImg: {
-    width: '300px',
-    height: '300px',
+  setBox: {
+    width: '50px',
+    height: '50px',
     border: '1px solid red',
-    borderRadius: '20px',
   },
   writeBox: {
     width: '1000px',
-    height: '200px',
+    height: '150px',
     border: '1px solid blue',
     borderRadius: '20px',
+    display: 'flex',
+    flexDirection: 'column',
   },
   titleBox: {
     width: styleComponent.width.width100p,
@@ -142,7 +143,12 @@ const style = {
   },
   detailBox: {
     width: styleComponent.width.width100p,
-    height: '70%',
+    height: '50%',
+    border: '1px solid red',
+  },
+  linkBox: {
+    width: styleComponent.width.width100p,
+    height: '20%',
     border: '1px solid red',
   },
   boxContainer: {
@@ -152,8 +158,6 @@ const style = {
     marginTop: '30px',
     ...styleComponent.flexRowCenterSet,
     justifyContent: 'space-evenly',
-    position: "relative",
-    overflow: "hidden",
   },
   boxComponent: {
     width: '300px',
@@ -162,6 +166,28 @@ const style = {
     ...styleComponent.flexRowCenterSet,
     fontSize: '40px',
   },
+  modal: {
+    position: 'fixed',
+    zIndex: '1',
+    left: '0',
+    top: '10%',
+    width: '100%',
+    height: '100%',
+    overflow: 'auto',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+  modalContent: {
+    backgroundColor: '#fefefe',
+    margin: '10% auto',
+    padding: '20px',
+    border: '1px solid #888',
+    width: '80%',
+    height: '70%',
+    borderRadius: '50px',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-evenly',
+  }
 }
 
 const eventStyle = {
