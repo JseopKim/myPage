@@ -37,7 +37,7 @@ titleTextFirstfix.innerText = "Se";
 titleTextFirstfix.style.color = "#79EF39"; // 첫 번째 부분의 색상 지정
 
 const titleTextSecondfix = tagCreate("span");
-titleTextSecondfix.innerText = "nsuous Devel";
+titleTextSecondfix.innerText = "nsitive Devel";
 titleTextSecondfix.style.color = "#ffffff"; // 두 번째 부분의 색상 지정
 
 const titleTextThirdfix = tagCreate("span");
@@ -304,9 +304,136 @@ const aboutContainer = tagCreate("div", {id: "about"});
 main.appendChild(aboutContainer);
 styleCreate(aboutContainer, style.aboutContainer);
 
-const subMenuBox = tagCreate("div");
-aboutContainer.appendChild(subMenuBox);
-styleCreate(subMenuBox, style.subMenuBox);
+let subMenuBoxArr = [];
 
-const subMenu = tagCreate
+for(let i = 0; i < 3; i++){
+  const subMenuBox = tagCreate("div");
+  subMenuBoxArr.push(subMenuBox);
+  aboutContainer.appendChild(subMenuBoxArr[i]);
+  styleCreate(subMenuBoxArr[i], style.subMenuBox);
+  if(subMenuBoxArr[0]) {
+    subMenuBoxArr[0].style.width = "20%"
+  } 
+  if (subMenuBoxArr[1]) {
+    subMenuBoxArr[1].style.width = "30%"
+  } 
+  if (subMenuBoxArr[2]) {
+    subMenuBoxArr[2].style.width = "50%"
+  }
+}
+
+const subMenuName = ['Education', 'Skills', 'Activities'];
+let subMenuNameBoxArr = [];
+let subMenuNameArr = [];
+let subMenuDetailBoxArr = [];
+
+for(let i in subMenuName){
+  const subMenuNameBox = tagCreate("div");
+  subMenuNameBoxArr.push(subMenuNameBox);
+  subMenuBoxArr[i].appendChild(subMenuNameBoxArr[i]);
+  styleCreate(subMenuNameBoxArr[i], style.subMenuNameBox);
+
+  const subMenu = tagCreate("div");
+  subMenuNameArr.push(subMenu);
+  subMenuNameBoxArr[i].appendChild(subMenuNameArr[i]);
+  styleCreate(subMenuNameArr[i], style.subMenu);
+  subMenuNameArr[i].innerText = subMenuName[i];
+
+  const subMenuDetail = tagCreate("div");
+  subMenuDetailBoxArr.push(subMenuDetail);
+  subMenuBoxArr[i].appendChild(subMenuDetailBoxArr[i]);
+  styleCreate(subMenuDetailBoxArr[i], style.subMenuDetailBox);
+}
+
+for (let i = 0; i < subMenuDetailBoxArr.length; i++) {
+  for (let j = 0; j < i + 1; j++) {
+    const subMenuDetail = tagCreate("div", {id: `${i}of${j}`});
+    subMenuDetailBoxArr[i].appendChild(subMenuDetail);
+    styleCreate(subMenuDetail, style.subMenuDetail);
+    subMenuDetail.style.width = `${100 / (i + 1)}%`;
+  }
+}
+
+//* Education Part
+
+const educationObj = {
+  term: "2017.03 - 2023.02",
+  title: "배재대학교",
+  major: "정보통신공학과",
+  score: "3.88 / 4.5"
+}
+const education = document.getElementById("0of0");
+styleCreate(education, style.education);
+
+const educationTerm = tagCreate("div");
+education.appendChild(educationTerm);
+styleCreate(educationTerm, style.educationFont);
+educationTerm.innerText = educationObj.term;
+
+const educationTitle = tagCreate("div");
+education.appendChild(educationTitle);
+styleCreate(educationTitle, style.educationTitle);
+educationTitle.innerText = educationObj.title;
+
+const educationMajor = tagCreate("div");
+education.appendChild(educationMajor);
+styleCreate(educationMajor, style.educationFont);
+educationMajor.innerText = educationObj.major;
+
+const educationScore = tagCreate("div");
+education.appendChild(educationScore);
+styleCreate(educationScore, style.educationFont);
+educationScore.innerText = educationObj.score;
+
+//* Skills Part
+const skillObj = {
+  title: ["BackEnd", "FrontEnd", "Tools"],
+  backend: ["Node.js", "Python", "MySQL", "MongoDB"],
+  frontend: ["JavaScript", "TypeScript", "React", "ReactNative", "HTML", "CSS"],
+  tool: ["Git, GitHub", "Slack", "Notion"],
+}
+
+const skillTitle = document.getElementById("1of0");
+styleCreate(skillTitle, style.skillBox);
+
+const skillContent = document.getElementById("1of1");
+styleCreate(skillContent, style.skillBox);
+
+let skillTitleArr = [];
+let skillContentArr = [];
+
+for(let i in skillObj.title){
+  const skillTitleName = tagCreate("div");
+  skillTitleArr.push(skillTitleName);
+  skillTitle.appendChild(skillTitleArr[i]);
+  styleCreate(skillTitleName, style.skillTitleName);
+  skillTitleArr[i].innerText = skillObj.title[i];
+
+  const skillContentName = tagCreate("div");
+  skillContentArr.push(skillContentName);
+  skillContent.appendChild(skillContentArr[i]);
+  styleCreate(skillContentName, style.skillContentName);
+}
+
+for(let i in skillObj.backend) {
+  const backendText = tagCreate("div");
+  skillContentArr[0].appendChild(backendText);
+  backendText.innerText = skillObj.backend[i];
+}
+
+for(let i in skillObj.frontend) {
+  const frontendText = tagCreate("div");
+  skillContentArr[1].appendChild(frontendText);
+  frontendText.innerText = skillObj.frontend[i];
+}
+
+for(let i in skillObj.tool) {
+  const toolText = tagCreate("div");
+  skillContentArr[2].appendChild(toolText);
+  toolText.innerText = skillObj.tool[i];
+}
+
+//* Activities Part
+const activityTitle = document.getElementById("2of0");
+styleCreate(activityTitle, style.activityBox);
 

@@ -192,10 +192,62 @@ const style = {
     width: styleComponent.width.width100p,
     height: styleComponent.height.height100p,
     border: '1px solid red',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   subMenuBox: {
-    
-  }
+    height: '70%',
+    border: '1px solid red',
+  },
+  subMenuNameBox: {
+    width: '100%',
+    height: '10%',
+    border: '1px solid yellow',
+  },
+  subMenu: {
+    width: '180px',
+    height: '95%',
+    backgroundColor: '#79EF39',
+    borderRadius: '50px',
+    ...styleComponent.flexRowCenterSet,
+    fontSize: '20px',
+    color: '#091802',
+  },
+  subMenuDetailBox: {
+    width: styleComponent.width.width100p,
+    height: '90%',
+    border: 'solid 1px blue',
+    ...styleComponent.flexRowCenterSet,
+  },
+  subMenuDetail: {
+    height: '100%',
+    border: '1px solid red',
+    marginLeft: '20px',
+  },
+  education: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  educationFont: {
+    fontSize: '30px',
+  },
+  educationTitle: {
+    fontSize: '50px',
+  },
+  skillBox: {
+    width: '50%',
+    height: styleComponent.height.height100p,
+  },
+  skillTitleName: {
+    width: styleComponent.width.width100p,
+    height: '33.33%',
+    fontSize: '50px',
+  },
+  skillContentName: {
+    width: styleComponent.width.width100p,
+    height: '33.33%',
+  },
 }
 
 const eventStyle = {
