@@ -434,6 +434,27 @@ for(let i in skillObj.tool) {
 }
 
 //* Activities Part
+const ActivityObj = {
+  title: ["교내활동", "교육활동"],
+  backend: ["멘토 / 멘티 프로그램", "튜터링 및 학습동아리", "아이디어 해커톤", "K-Digital-Training"],
+  frontend: ["JavaScript", "TypeScript", "React", "ReactNative", "HTML", "CSS"],
+  tool: ["Git, GitHub", "Slack", "Notion"],
+}
+
 const activityTitle = document.getElementById("2of0");
 styleCreate(activityTitle, style.activityBox);
 
+let activityTitleArr = [];
+
+for(let i in skillObj.title){
+  const skillTitleName = tagCreate("div");
+  skillTitleArr.push(skillTitleName);
+  skillTitle.appendChild(skillTitleArr[i]);
+  styleCreate(skillTitleName, style.skillTitleName);
+  skillTitleArr[i].innerText = skillObj.title[i];
+
+  const skillContentName = tagCreate("div");
+  skillContentArr.push(skillContentName);
+  skillContent.appendChild(skillContentArr[i]);
+  styleCreate(skillContentName, style.skillContentName);
+}

@@ -248,6 +248,10 @@ const style = {
     width: styleComponent.width.width100p,
     height: '33.33%',
   },
+  activityBox: {
+    width: '33.33%',
+    height: styleComponent.height.height100p,
+  }
 }
 
 const eventStyle = {
