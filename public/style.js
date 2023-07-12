@@ -25,11 +25,12 @@ const style = {
   rootContainer: {
     width: '100vw',
     height: '130vh',
-    backgroundColor: 'black',
+    backgroundColor: '#0C0F0A',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'end',
     alignItems: 'end',
+    overflowX: 'hidden',
   },
   menuContainer: {
     width: '100%',
@@ -39,7 +40,7 @@ const style = {
   },
   menuTitle: {
     width: '95%',
-    height: '30%',
+    height: '40%',
     flexDirection: 'row',
     justifyContent: 'end',
     alignItems: 'center',
@@ -84,26 +85,47 @@ const style = {
     alignItems: 'start',
     justifyContent: 'space-evenly',
     marginLeft: '30px',
+    borderLeft: '5px solid #79EF39',
   },
   profileImg: {
     width: '300px',
-    height: '300px',
+    height: '400px',
+    marginLeft: '30px',
+    backgroundImage: "url('./picture.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    borderRadius: '10px',
   },
   profileInfo: {
     width: '90%',
     height: '40%',
+    marginLeft: '30px',
+    fontSize: '30px',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    borderRight: '5px solid #79EF39',
   },
   profileContentBox: {
     width: '40%',
     height: '100%',
-    backgroundColor: 'black',
+    backgroundColor: '#0C0F0A',
     ...styleComponent.flexColCenterSet,
     gap: '40px',
+    borderTop: '3px solid #79EF39',
   },
   profileContent: {
-    width: '60%',
+    width: '20%',
     height: '7%',
-    border: '1px solid white',
+    borderRadius: '20px',
+    backgroundColor: '#79EF39',
+    color: '#091802',
+    fontSize: '20px',
+    ...styleComponent.flexRowCenterSet,
+    textDecorateLine: 'none',
+  },
+  icon: {
+    width: '50px',
+    height: '50px'
   },
   growthContainer: {
     width: styleComponent.width.width100p,
@@ -120,6 +142,8 @@ const style = {
   setBox: {
     width: '50px',
     height: '50px',
+    border: '3px solid #79EF39',
+    borderRadius: '15px',
   },
   writeBox: {
     width: '1000px',
@@ -131,14 +155,18 @@ const style = {
   titleBox: {
     width: styleComponent.width.width100p,
     height: '30%',
+    marginLeft: '20px',
+    fontSize: '25px',
   },
   detailBox: {
     width: styleComponent.width.width100p,
-    height: '50%',
+    height: '40%',
+    marginLeft: '20px',
   },
   linkBox: {
     width: styleComponent.width.width100p,
-    height: '20%',
+    height: '30%',
+    marginLeft: '20px',
   },
   boxContainer: {
     width: '100%',
@@ -168,10 +196,10 @@ const style = {
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   modalContent: {
-    backgroundColor: '#fefefe',
+    backgroundColor: '#091802',
     margin: '10% auto',
     padding: '20px',
-    border: '1px solid #888',
+    boxShadow: "0 0 10px 5px rgba(121, 239, 57, 0.3)",
     width: '80%',
     height: '70%',
     borderRadius: '50px',

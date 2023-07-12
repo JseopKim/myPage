@@ -15,6 +15,8 @@ function styleCreate(target, styleOb) {
 const root = tagCreate("div", { id: "root" });
 document.body.appendChild(root);
 styleCreate(root, style.rootContainer);
+root.scrollLeft = 0;
+root.scrollTo(0, root.scrollTop);
 
 //! 메뉴 파트
 
@@ -110,18 +112,41 @@ const profileInfo = tagCreate("div");
 profileImgBox.appendChild(profileInfo);
 styleCreate(profileInfo, style.profileInfo);
 
+const infoText = `
+  <span style="color: #89F150;">감각적인</span> 개발자를 꿈꾸는 김지섭입니다.<br>
+  백엔드나 프론트엔드에 얽매이지 않고 개발하고 싶습니다.<br>
+  만들고 싶은 것을 만들면서 개발에 흥미를 가지게 되었고,
+  만들고 싶은 것이 많아지면서 배우고 싶은 것도 많아지고 그만큼 노력하는 개발자입니다.<br>
+  늘 성장하며 <span style="color: #89F150;">감각적인</span> 개발자로 거듭날 것입니다.
+`;
+
+profileInfo.innerHTML = infoText
+
 const profileContentBox = tagCreate("div");
 profileContainer.appendChild(profileContentBox);
 styleCreate(profileContentBox, style.profileContentBox);
 
 let textBoxArr = [];
 
-for(let i = 0; i < 4; i++) {
-  const text = tagCreate("div");
-  textBoxArr.push(text);
-  profileContentBox.appendChild(textBoxArr[i]);
-  styleCreate(textBoxArr[i], style.profileContent);
-}
+const textName = tagCreate("a", {id: "name"});
+profileContentBox.appendChild(textName);
+styleCreate(textName, style.profileContent);
+textName.innerText = "김지섭"
+
+const textEmail = tagCreate("a", {href: "mailto:jsub5646@gmail.com"});
+profileContentBox.appendChild(textEmail);
+styleCreate(textEmail, style.profileContent);
+const emailIcon = tagCreate("img", {src: "./mailicon.png"});
+textEmail.appendChild(emailIcon);
+styleCreate(emailIcon, style.icon);
+
+const textGithub = tagCreate("a", {href: "https://github.com/JseopKim"});
+profileContentBox.appendChild(textGithub);
+styleCreate(textGithub, style.profileContent);
+const githubIcon = tagCreate("img", {src: "./githubicon.png"});
+textGithub.appendChild(githubIcon);
+styleCreate(githubIcon, style.icon);
+
 
 //? 성장과정
 const growthContainer = tagCreate("div");
@@ -170,19 +195,23 @@ for (let i in years) {
 const project = {
   project_2020: {
     title: ['ShoeNikers', 'keen'],
-    link: ['aaabbbccc', 'aaabbb'],
+    detail: ['신발을 좋아해서 만들어보았습니다.\n어떤 브랜드가 있는지 신발을 좋아하는 사람들이나 좋아하지 않는 사람들도 충분히 신발에 대한 관심을 가질 수 있도록 웹 페이지를 만들었습니다.', '옷을 좋아하다 보니 쇼핑몰 페이지도 직접 만들 수 있지 않을까 하는 마음이 들어 만들어보았습니다.\n 옷을 볼 수 있고 자세한 옷의 정보를 확인할 수 있도록 웹 페이지를 만들어보았습니다.'],
+    link: ['https://github.com/JseopKim/2020_shoeNikers.git', 'https://github.com/JseopKim/2020_keen.git'],
   },
   project_2021: {
     title: ['seeseeTV'],
+    detail: ['집 안에 CCTV를 이용하여 밖에서도 CCTV를 안드로이드 앱을 이용하여 확인할 수 있는 프로그램을 만들어보았습니다.'],
     link: ['aaaaaaa'],
   },
   project_2022: {
     title: ['CCTV Manager', 'KIDSAFE'],
-    link: ['aaa', 'bbb'],
+    detail: ['라즈베이파이를 이용하여 만든 CCTV를 밖에서도 동작할 수 있도록 만들고 CCTV의 기능까지 가능하도록 프로그램을 만들었습니다.', '아동안전시스템으로 AI카메라를 통해 아동을 감지하도록 하였습니다.\n어린이 보호구역에서의 안전시스템으로 아이들의 안전을 지킬 수 있도록 프로그램을 만들었습니다.'],
+    link: ['https://childlike-dryer-fc8.notion.site/IoT-CCTV-11d3494fce41464bbc954d4ea5d2d6a5?pvs=4', 'https://childlike-dryer-fc8.notion.site/2022-15a6c41ee73a460cae7bf8009ecf17e3?pvs=4'],
   },
   project_2023: {
     title: ['Mungta', 'ChickenStock', 'smooD'],
-    link: ['ddd', 'eee', 'fff'],
+    detail: ['지도 API를 이용한 강아지 산책 친구 만들어주는 ‘멍타’ 웹 서비스입니다.', '주식 입문자를 위한 주식 종목을 추천을 목적으로 만든 리액트 네이티브 앱입니다.', 'Tmap API를 활용하여 지도에서 선택한 시설 중 가까운 곳을 우선으로 빠르게 안내하는 서비스입니다.'],
+    link: ['https://childlike-dryer-fc8.notion.site/Project-C-bc47faeeb7354343b5c6b2d794251062?pvs=4', 'https://childlike-dryer-fc8.notion.site/Project-A-3-8347aeb01fe24d0d84e68c8a84dbf21f?pvs=4', 'https://childlike-dryer-fc8.notion.site/Project-B-D-4f1e89b04ac2425f8fddd53404ac2334?pvs=4'],
   }
 }
 
@@ -224,7 +253,9 @@ function makeContent(parent, title, content, link) {
   writeBox.appendChild(linkBox);
   styleCreate(linkBox, style.linkBox);
 
-  detailBox.innerText = link;
+  const imgGithub = tagCreate("a", {href: `${link}`, target: "_blank"});
+  linkBox.appendChild(imgGithub);
+  imgGithub.innerText = "Go to Project";
 }
 
 //* 모달 생성 함수
@@ -259,19 +290,19 @@ for (let i = 0; i < box.length; i++) {
     openModal();
     if (i === 0) {
       for (let j = 0; j < project.project_2020.title.length; j++) {
-        makeContent(modalContent, project.project_2020.title[j], project.project_2020.link[j]);
+        makeContent(modalContent, project.project_2020.title[j], project.project_2020.detail[j], project.project_2020.link[j]);
       }
     } else if (i === 1) {
       for (let j = 0; j < project.project_2021.title.length; j++) {
-        makeContent(modalContent, project.project_2021.title[j], project.project_2021.link[j]);
+        makeContent(modalContent, project.project_2021.title[j], project.project_2020.detail[j], project.project_2021.link[j]);
       }
     } else if (i === 2) {
       for (let j = 0; j < project.project_2022.title.length; j++) {
-        makeContent(modalContent, project.project_2022.title[j], project.project_2022.link[j]);
+        makeContent(modalContent, project.project_2022.title[j], project.project_2020.detail[j], project.project_2022.link[j]);
       }
     } else if (i === 3) {
       for (let j = 0; j < project.project_2023.title.length; j++) {
-        makeContent(modalContent, project.project_2023.title[j], project.project_2023.link[j]);
+        makeContent(modalContent, project.project_2023.title[j], project.project_2020.detail[j], project.project_2023.link[j]);
       }
     }
   });
@@ -510,6 +541,8 @@ document.getElementById(menuName[2]).addEventListener('click', function() {
   aboutContainer.style.display = "flex";
 })
 
-for(let i in box) {
-  box[i].addEventListener("mou")
-}
+document.body.addEventListener("scroll", function() {
+  // 스크롤 이벤트 발생 시 스크롤바 스타일을 변경하는 코드 작성
+  document.body.style.scrollbarWidth = "thin";
+  document.body.style.scrollbarColor = "red blue";
+});
