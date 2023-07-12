@@ -93,29 +93,6 @@ const main = tagCreate("div", { id: "main" });
 root.appendChild(main);
 styleCreate(main, style.mainContainer);
 
-window.addEventListener('load', function() {
-  growthContainer.style.display = "none";
-  aboutContainer.style.display = "none";
-})
-
-document.getElementById(menuName[0]).addEventListener('click', function() {
-  profileContainer.style.display = "flex";
-  growthContainer.style.display = "none";
-  aboutContainer.style.display = "none";
-})
-
-document.getElementById(menuName[1]).addEventListener('click', function() {
-  profileContainer.style.display = "none";
-  growthContainer.style.display = "flex";
-  aboutContainer.style.display = "none";
-})
-
-document.getElementById(menuName[2]).addEventListener('click', function() {
-  profileContainer.style.display = "none";
-  growthContainer.style.display = "none";
-  aboutContainer.style.display = "flex";
-})
-
 //? 프로필
 const profileContainer = tagCreate("div", { id: "profile" });
 main.appendChild(profileContainer);
@@ -175,6 +152,7 @@ function makeWriteBox(title, detail) {
 
 const years = [2020, 2021, 2022, 2023];
 
+//? 2020 - 2023 박스
 let box = [];
 
 const boxContainer = tagCreate("div");
@@ -434,27 +412,104 @@ for(let i in skillObj.tool) {
 }
 
 //* Activities Part
-const ActivityObj = {
+const activityObj = {
   title: ["교내활동", "교육활동"],
-  backend: ["멘토 / 멘티 프로그램", "튜터링 및 학습동아리", "아이디어 해커톤", "K-Digital-Training"],
-  frontend: ["JavaScript", "TypeScript", "React", "ReactNative", "HTML", "CSS"],
-  tool: ["Git, GitHub", "Slack", "Notion"],
+  subtitle: ["멘토 / 멘티 프로그램", "튜터링 및 학습동아리", "아이디어 해커톤", "KDT 국비교육과정"],
+  content: [
+    "안항 교육 프로그램 멘토링\n2022. 1학기 - Python\n2022. 2학기 - C", "학습모둠\n2021.1학기 - Java\n2021.2학기 - Java\n\n학습동아리\n2022.1학기 HTML\n\n튜터링\n2022.1학기 - C\n2022.2학기 - Arduino", 
+    "AI/SW 아이디어 해커톤\n2022.05.21 - 2022.05.22", 
+    "기업에서 요구하는 프레임워크를 활용한 풀스택 개발자(NODE, ECMAScript)양성"
+  ],
 }
 
 const activityTitle = document.getElementById("2of0");
 styleCreate(activityTitle, style.activityBox);
 
+const activitySubTitle = document.getElementById("2of1");
+styleCreate(activitySubTitle, style.activityBox);
+
+const activityContent = document.getElementById("2of2");
+styleCreate(activityContent, style.activityBox);
+
 let activityTitleArr = [];
+let activitySubTitleArr = [];
+let activityContentArr = [];
 
-for(let i in skillObj.title){
-  const skillTitleName = tagCreate("div");
-  skillTitleArr.push(skillTitleName);
-  skillTitle.appendChild(skillTitleArr[i]);
-  styleCreate(skillTitleName, style.skillTitleName);
-  skillTitleArr[i].innerText = skillObj.title[i];
+for(let i in activityObj.title) {
+  const activityTitleName = tagCreate("div");
+  activityTitleArr.push(activityTitleName);
+  activityTitle.appendChild(activityTitleArr[i]);
+  if(activityTitleArr[0]) {
+    styleCreate(activityTitleArr[0], style.activityTitleOne);
+  }
+  if(activityTitleArr[1]) {
+    styleCreate(activityTitleArr[1], style.activityTitleTwo);
+  }
+  activityTitleArr[i].innerText = activityObj.title[i];
+}
 
-  const skillContentName = tagCreate("div");
-  skillContentArr.push(skillContentName);
-  skillContent.appendChild(skillContentArr[i]);
-  styleCreate(skillContentName, style.skillContentName);
+for(let i in activityObj.subtitle) {
+  const activitySubTitleName = tagCreate("div");
+  activitySubTitleArr.push(activitySubTitleName);
+  activitySubTitle.appendChild(activitySubTitleArr[i]);
+  if(activitySubTitleArr[0]) {
+    styleCreate(activitySubTitleArr[0], style.activitySubTitleOneThree);
+  }
+  if(activitySubTitleArr[1]) {
+    styleCreate(activitySubTitleArr[1], style.activitySubTitleTwo);
+  }
+  if(activitySubTitleArr[2]) {
+    styleCreate(activitySubTitleArr[2], style.activitySubTitleOneThree);
+  }
+  if(activitySubTitleArr[3]) {
+    styleCreate(activitySubTitleArr[3], style.activitySubTitleFour);
+  }
+  activitySubTitleArr[i].innerText = activityObj.subtitle[i];  
+}
+
+for(let i in activityObj.content) {
+  const activityContentName = tagCreate("div");
+  activityContentArr.push(activityContentName);
+  activityContent.appendChild(activityContentArr[i]);
+  if(activityContentArr[0]) {
+    styleCreate(activityContentArr[0], style.activityContentOne);
+  }
+  if(activityContentArr[1]) {
+    styleCreate(activityContentArr[1], style.activityContentTwo);
+  }
+  if(activityContentArr[2]) {
+    styleCreate(activityContentArr[2], style.activityContentThree);
+  }
+  if(activityContentArr[3]) {
+    styleCreate(activityContentArr[3], style.activityContentFour);
+  }
+  activityContentArr[i].innerText = activityObj.content[i];
+}
+
+//! 클릭 이벤트 처리
+window.addEventListener('load', function() {
+  growthContainer.style.display = "none";
+  aboutContainer.style.display = "none";
+})
+
+document.getElementById(menuName[0]).addEventListener('click', function() {
+  profileContainer.style.display = "flex";
+  growthContainer.style.display = "none";
+  aboutContainer.style.display = "none";
+})
+
+document.getElementById(menuName[1]).addEventListener('click', function() {
+  profileContainer.style.display = "none";
+  growthContainer.style.display = "flex";
+  aboutContainer.style.display = "none";
+})
+
+document.getElementById(menuName[2]).addEventListener('click', function() {
+  profileContainer.style.display = "none";
+  growthContainer.style.display = "none";
+  aboutContainer.style.display = "flex";
+})
+
+for(let i in box) {
+  box[i].addEventListener("mou")
 }
