@@ -93,7 +93,7 @@ const style = {
     width: '300px',
     height: '400px',
     marginLeft: '30px',
-    backgroundImage: "url('./picture.jpg')",
+    backgroundImage: "url('./profile.jpg')",
     backgroundSize: "cover",
     backgroundPosition: "center",
     borderRadius: '10px',
