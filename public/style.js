@@ -44,6 +44,7 @@ const style = {
     flexDirection: 'row',
     justifyContent: 'end',
     alignItems: 'center',
+    fontWeight: 700, 
   },
   menuTitleText: {
     display: 'flex',
@@ -63,6 +64,7 @@ const style = {
     ...styleComponent.flexRowCenterSet,
     justifyContent: 'space-evenly',
     fontSize: '50px',
+    fontWeight: 700, 
   },
   mainContainer: {
     width: styleComponent.width.width100p,
@@ -101,6 +103,7 @@ const style = {
     height: '40%',
     marginLeft: '30px',
     fontSize: '30px',
+    fontWeight: 400,
     alignItems: 'center',
     justifyContent: 'space-evenly',
     borderRight: '5px solid #79EF39',
@@ -121,7 +124,7 @@ const style = {
     color: '#091802',
     fontSize: '20px',
     ...styleComponent.flexRowCenterSet,
-    textDecorateLine: 'none',
+    textDecoration: 'none',
   },
   icon: {
     width: '50px',
@@ -167,6 +170,10 @@ const style = {
     width: styleComponent.width.width100p,
     height: '30%',
     marginLeft: '20px',
+  },
+  imgGithub: {
+    textDecoration: 'none',
+    color: '#79EF39',
   },
   boxContainer: {
     width: '100%',

@@ -255,6 +255,7 @@ function makeContent(parent, title, content, link) {
 
   const imgGithub = tagCreate("a", {href: `${link}`, target: "_blank"});
   linkBox.appendChild(imgGithub);
+  styleCreate(imgGithub, style.imgGithub);
   imgGithub.innerText = "Go to Project";
 }
 
@@ -294,15 +295,15 @@ for (let i = 0; i < box.length; i++) {
       }
     } else if (i === 1) {
       for (let j = 0; j < project.project_2021.title.length; j++) {
-        makeContent(modalContent, project.project_2021.title[j], project.project_2020.detail[j], project.project_2021.link[j]);
+        makeContent(modalContent, project.project_2021.title[j], project.project_2021.detail[j], project.project_2021.link[j]);
       }
     } else if (i === 2) {
       for (let j = 0; j < project.project_2022.title.length; j++) {
-        makeContent(modalContent, project.project_2022.title[j], project.project_2020.detail[j], project.project_2022.link[j]);
+        makeContent(modalContent, project.project_2022.title[j], project.project_2022.detail[j], project.project_2022.link[j]);
       }
     } else if (i === 3) {
       for (let j = 0; j < project.project_2023.title.length; j++) {
-        makeContent(modalContent, project.project_2023.title[j], project.project_2020.detail[j], project.project_2023.link[j]);
+        makeContent(modalContent, project.project_2023.title[j], project.project_2023.detail[j], project.project_2023.link[j]);
       }
     }
   });
