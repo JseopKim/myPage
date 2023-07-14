@@ -87,7 +87,7 @@ const style = {
     alignItems: 'start',
     justifyContent: 'space-evenly',
     marginLeft: '30px',
-    borderLeft: '5px solid #79EF39',
+    borderRight: '5px solid #79EF39',
   },
   profileImg: {
     width: '300px',
@@ -102,11 +102,12 @@ const style = {
     width: '90%',
     height: '40%',
     marginLeft: '30px',
-    fontSize: '30px',
+    fontSize: '25px',
     fontWeight: 400,
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    borderRight: '5px solid #79EF39',
+    borderBottom: '5px solid #79EF39',
+    fontFamily: 'GmarketSansMedium',
   },
   profileContentBox: {
     width: '40%',
@@ -114,7 +115,7 @@ const style = {
     backgroundColor: '#0C0F0A',
     ...styleComponent.flexColCenterSet,
     gap: '40px',
-    borderTop: '3px solid #79EF39',
+    borderRight: '5px solid #79EF39',
   },
   profileContent: {
     width: '20%',
@@ -163,17 +164,19 @@ const style = {
   },
   detailBox: {
     width: styleComponent.width.width100p,
-    height: '40%',
+    height: '45%',
     marginLeft: '20px',
+    fontFamily: 'GmarketSansMedium',
   },
   linkBox: {
     width: styleComponent.width.width100p,
-    height: '30%',
+    height: '25%',
     marginLeft: '20px',
   },
   imgGithub: {
     textDecoration: 'none',
     color: '#79EF39',
+    fontFamily: 'GmarketSansMedium',
   },
   boxContainer: {
     width: '100%',
@@ -201,6 +204,7 @@ const style = {
     height: '100%',
     overflow: 'auto',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    ...styleComponent.flexRowCenterSet,
   },
   modalContent: {
     backgroundColor: '#091802',
@@ -215,7 +219,7 @@ const style = {
     justifyContent: 'space-evenly',
   },
   aboutContainer: {
-    width: styleComponent.width.width100p,
+    width: '95%',
     height: styleComponent.height.height100p,
     display: 'flex',
     flexDirection: 'row',
@@ -252,9 +256,10 @@ const style = {
   },
   educationFont: {
     fontSize: '30px',
+    fontFamily: 'GmarketSansMedium',
   },
   educationTitle: {
-    fontSize: '50px',
+    fontSize: '40px',
   },
   skillBox: {
     width: '50%',
@@ -263,11 +268,12 @@ const style = {
   skillTitleName: {
     width: styleComponent.width.width100p,
     height: '33.33%',
-    fontSize: '50px',
+    fontSize: '40px',
   },
   skillContentName: {
     width: styleComponent.width.width100p,
     height: '33.33%',
+    fontFamily: 'GmarketSansMedium',
   },
   activityBox: {
     width: '33.33%',
@@ -276,12 +282,12 @@ const style = {
   activityTitleOne: {
     width: styleComponent.width.width100p,
     height: '80%',
-    fontSize: '50px',
+    fontSize: '40px',
   },
   activityTitleTwo: {
     width: styleComponent.width.width100p,
     height: '20%',
-    fontSize: '50px',
+    fontSize: '40px',
   },
   activitySubTitleOneThree: {
     width: styleComponent.width.width100p,
@@ -301,18 +307,22 @@ const style = {
   activityContentOne: {
     width: styleComponent.width.width100p,
     height: '15%',
+    fontFamily: 'GmarketSansMedium',
   },
   activityContentTwo: {
     width: styleComponent.width.width100p,
     height: '50%',
+    fontFamily: 'GmarketSansMedium',
   },
   activityContentThree: {
     width: styleComponent.width.width100p,
     height: '15%',
+    fontFamily: 'GmarketSansMedium',
   },
   activityContentFour: {
     width: styleComponent.width.width100p,
     height: '20%',
+    fontFamily: 'GmarketSansMedium',
   },
 }
 

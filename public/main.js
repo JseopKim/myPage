@@ -113,11 +113,11 @@ profileImgBox.appendChild(profileInfo);
 styleCreate(profileInfo, style.profileInfo);
 
 const infoText = `
-  <span style="color: #89F150;">감각적인</span> 개발자를 꿈꾸는 김지섭입니다.<br>
+  <span style="color: #89F150; font-family: 'GmarketSansMedium';">감각적인</span> 개발자를 꿈꾸는 김지섭입니다.<br>
   백엔드나 프론트엔드에 얽매이지 않고 개발하고 싶습니다.<br>
-  만들고 싶은 것을 만들면서 개발에 흥미를 가지게 되었고,
+  만들고 싶은 것을 만들면서 개발에 흥미를 가지게 되었고,<br>
   만들고 싶은 것이 많아지면서 배우고 싶은 것도 많아지고 그만큼 노력하는 개발자입니다.<br>
-  늘 성장하며 <span style="color: #89F150;">감각적인</span> 개발자로 거듭날 것입니다.
+  늘 성장하며 <span style="color: #89F150; font-family: 'GmarketSansMedium';">Sensitive</span> Developer로 거듭날 것입니다.
 `;
 
 profileInfo.innerHTML = infoText
@@ -201,7 +201,7 @@ const project = {
   project_2021: {
     title: ['seeseeTV'],
     detail: ['집 안에 CCTV를 이용하여 밖에서도 CCTV를 안드로이드 앱을 이용하여 확인할 수 있는 프로그램을 만들어보았습니다.'],
-    link: ['aaaaaaa'],
+    link: ['https://childlike-dryer-fc8.notion.site/2021-324e4b291b6445d39aba5aafd6fce457?pvs=4'],
   },
   project_2022: {
     title: ['CCTV Manager', 'KIDSAFE'],
@@ -446,7 +446,7 @@ for(let i in skillObj.tool) {
 //* Activities Part
 const activityObj = {
   title: ["교내활동", "교육활동"],
-  subtitle: ["멘토 / 멘티 프로그램", "튜터링 및 학습동아리", "아이디어 해커톤", "KDT 국비교육과정"],
+  subtitle: ["멘토 / 멘티 프로그램", "튜터링 및 학습동아리", "아이디어 해커톤", "KDT 교육과정"],
   content: [
     "안항 교육 프로그램 멘토링\n2022. 1학기 - Python\n2022. 2학기 - C", "학습모둠\n2021.1학기 - Java\n2021.2학기 - Java\n\n학습동아리\n2022.1학기 HTML\n\n튜터링\n2022.1학기 - C\n2022.2학기 - Arduino", 
     "AI/SW 아이디어 해커톤\n2022.05.21 - 2022.05.22", 
@@ -528,18 +528,21 @@ document.getElementById(menuName[0]).addEventListener('click', function() {
   profileContainer.style.display = "flex";
   growthContainer.style.display = "none";
   aboutContainer.style.display = "none";
+  menuName[0].style.transform = 'translateX(0)';
 })
 
 document.getElementById(menuName[1]).addEventListener('click', function() {
   profileContainer.style.display = "none";
   growthContainer.style.display = "flex";
   aboutContainer.style.display = "none";
+  menuName[1].style.transform = 'translateX(-100%)';
 })
 
 document.getElementById(menuName[2]).addEventListener('click', function() {
   profileContainer.style.display = "none";
   growthContainer.style.display = "none";
   aboutContainer.style.display = "flex";
+  menuName[2].style.transform = 'translateX(-200%)';
 })
 
 document.body.addEventListener("scroll", function() {
