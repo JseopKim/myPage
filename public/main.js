@@ -209,9 +209,9 @@ const project = {
     link: ['https://childlike-dryer-fc8.notion.site/IoT-CCTV-11d3494fce41464bbc954d4ea5d2d6a5?pvs=4', 'https://childlike-dryer-fc8.notion.site/2022-15a6c41ee73a460cae7bf8009ecf17e3?pvs=4'],
   },
   project_2023: {
-    title: ['Mungta', 'ChickenStock', 'smooD'],
-    detail: ['지도 API를 이용한 강아지 산책 친구 만들어주는 ‘멍타’ 웹 서비스입니다.', '주식 입문자를 위한 주식 종목을 추천을 목적으로 만든 리액트 네이티브 앱입니다.', 'Tmap API를 활용하여 지도에서 선택한 시설 중 가까운 곳을 우선으로 빠르게 안내하는 서비스입니다.'],
-    link: ['https://childlike-dryer-fc8.notion.site/Project-C-bc47faeeb7354343b5c6b2d794251062?pvs=4', 'https://childlike-dryer-fc8.notion.site/Project-A-3-8347aeb01fe24d0d84e68c8a84dbf21f?pvs=4', 'https://childlike-dryer-fc8.notion.site/Project-B-D-4f1e89b04ac2425f8fddd53404ac2334?pvs=4'],
+    title: ['Mungta', 'ChickenStock', 'smooD', 'WatermelonGame'],
+    detail: ['지도 API를 이용한 강아지 산책 친구 만들어주는 ‘멍타’ 웹 서비스입니다.', '주식 입문자를 위한 주식 종목을 추천을 목적으로 만든 리액트 네이티브 앱입니다.', 'Tmap API를 활용하여 지도에서 선택한 시설 중 가까운 곳을 우선으로 빠르게 안내하는 서비스입니다.', 'Vite와 matter.js를 사용한 간단한 웹 게임입니다.'],
+    link: ['https://childlike-dryer-fc8.notion.site/Project-C-bc47faeeb7354343b5c6b2d794251062?pvs=4', 'https://childlike-dryer-fc8.notion.site/Project-A-3-8347aeb01fe24d0d84e68c8a84dbf21f?pvs=4', 'https://childlike-dryer-fc8.notion.site/Project-B-D-4f1e89b04ac2425f8fddd53404ac2334?pvs=4', 'https://www.notion.so/2bc856fbaf6d48f599c1d6b9be5ac54c?pvs=4'],
   }
 }
 
